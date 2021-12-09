@@ -1,13 +1,232 @@
-body {
+* {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+}
+body,h1,h2,h3,h4,h5,h6,p {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  text-decoration: none;
+}
+/* Header top content  */
+.issueHeader {
+  background: #F5F8FA;
+  padding: 2rem;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+}
+.issueHeader_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+}
+.issueHeader_top_icon {
+  width: 26px;
+  margin-right: 5px;
+  box-sizing: border-box;
+}
+.issueHeader_top_breadcumb_heading {
+  display: flex;
+  align-items: center;
+}
+.issueHeader_top_breadcumb_txt {
+  color: #0B67DA;
+}
+.issueHeader_top_breadcumb_status {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  color: #57606A;
+  padding: 4px 14px;
+  display: inline-block;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+.issueHeader_top_details {
+  display: flex;
+}
+.issueHeader_top_details_list {
+  color: #24292E;
+  border: 1px solid #D4D8DA;
+  border-radius: 10px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.issueHeader_top_details_list:last-child {
+  margin-right: 0;
+}
+.issueHeader_top_details_list_label {
+  padding: 10px 10px 10px 0;
+}
+.issueHeader_top_details_list_data {
+ background: #fff;
+ padding: 10px;
+ border-radius: 0 10px 10px 0;
+ border-left: 1px solid #D4D8DA;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Header tab options  */
+.issueTabs {
+  display: flex;
+}
+.issueTabs_list {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 10px 14px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid transparent;
+}
+.issueTabs_list.active {
+  border-bottom: 2px solid #FD8C73;
+} 
+.issueTabs_list:hover {
+  border-color: #6e768166;
+}
+.issueTabs_list.active:hover {
+  border-color: #FD8C73;
+}
+.issueTabs_list_icon {
+  width: 30px;
+  margin-right: 4px;
+}
+.issueTabs_list_label {
+  font-size: 1rem;
+  color: #24292E;
+  font-weight: 600;
+}
+.issueTabs_list_data {
+  background: #E7EBEE;
+  padding: 5px 10px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* issue listing  */
+.isuesList {
+  width: 85%;
+  margin: auto;
+  border: 1px solid #CED7DE;
+  border-radius: 6px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.isuesList_item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #CED7DE;
+}
+.isuesList .lazyload-wrapper:last-child .isuesList_item {
+  border-bottom: 0;
+}
+.isuesList_item_icon {
+  width: 16px;
+}
+.isuesList_item_content {
+  display: flex;
+  align-items: flex-start;
+  width: 84%;
+}
+.isuesList_item_content .isuesList_item_icon {
+  width: 26px;
+  margin-right: 5px;
+}
+.isuesList_item_content_head {
+  font-size: 1rem;
+  text-align: left;
+}
+.isuesList_item_content_link {
+  text-decoration: none;
+  color: #24292E;
+} 
+.isuesList_item_content_link:hover {
+  color: #0B67DA;
+}
+.isuesList_item_comntCount {
+  vertical-align: top;
+  padding-left: 5px;
+  font-size: 12px;
+}
+.isuesList_item_content_txt {
+  color: #5A636D;
+  font-size: 14px;
+  text-align: left;
+}
+.isuesList_item_content_status span {
+  padding: 6px 16px;
+  border-radius: 36px;
+  font-size: 12px;
+  margin-left: 5px;
+  display: inline-block;
+}
+.isuesList_item_user .isuesList_item_icon {
+  width: 26px;
+  border-radius: 50%;
+}
+.isuesList_item_pr, .isuesList_item_user, .isuesList_item_comment {
+  width: 8%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .issueHeader {
+    padding: 1rem;
+    padding-bottom: 0;
+  }
+  .issueHeader_top_icon {
+    width: 16px;
+  }
+  .issueHeader_top_breadcumb_heading {
+    font-size: 14px;
+  }
+  .issueHeader_top_breadcumb_status {
+    font-size: 12px;
+  }
+  .issueHeader_top {
+    padding-bottom: 0;
+  }
+  .issueTabs {
+    width: 100%;
+    overflow: scroll;
+}
+  .issueTabs_list_icon {
+    width: 20px;
+  }
+  .issueTabs_list_label {
+    font-size: 12px;
+  }
+  .issueHeader_top_details {
+    display: none;
+  }
+  .isuesList {
+    width: 100%;
+    border-radius: 0;
+    margin-top: 0;
+  }
+  .isuesList_item {
+    padding: 10px;
+  }
+  .isuesList_item_content {
+    width: 100%;
+  }
+  .isuesList_item_user, .isuesList_item_comment {
+    display: none;
+  }
+  .isuesList_item_content_txt {
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  .isuesList_item_content_status span {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
 }
